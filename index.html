@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>BF4 Random Generator</title>	
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">	
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/purista.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+</head>
+
+
+<body>
+<header id="head">
+	<div class="game"><img src="./bf4/logosmall.png" alt=""></div>
+	<div class="nav">
+	<div class="home">
+		<a href="#home"class="active-borders-right" id="ho">Soldier</a>
+	</div>
+	<table class="left">
+		<tbody>
+			<tr>
+				<td>
+				<a href="#about"class="active-borders-left" id="ab">About</a>
+				</td>
+				<td>
+				<a href=""class="active-borders-left">donation</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+</header>
+<div class="container" id="login">
+	<div class="main">
+		Soldier Name:<input type="text" id="soldiername" class="box-content active-borders">
+		Your Platform:<select name="browser" class="box-content active-borders" id="platform">
+	  	    <option value="pc">pc</option>
+		    <option value="xbox">xbox</option>
+		    <option value="ps3">ps3</option>
+		    <option value="xone">xone</option>
+		    <option value="ps4">ps4</option>
+		 </select>
+		<button id="sub">submit</button>
+	</div>
+</div>
+<div id="loadout"class="loadout-container-wpr container">
+<div class="row">
+		<div class="loadout-kit">
+			<div class="loadout-container-header">
+				<h1><span><i></i>kit</span></h1>				
+			</div>
+			<div class="kit-picture box-content gen"><div class="picture"></div></div>
+			<div class="gen box-content"><div class="gen-border"></div></div>
+		</div>
+		<div class="loadout-item-container left-margin-container primary-gun">
+			<div class="loadout-container-header">
+				<h1><span>primary</span></h1>				
+			</div>
+			<div class="gun-container box-content"><div class="gun primaryW"></div></div>
+			<div class="attachments">
+				<div class="optic box-content"></div>
+				<div class="accesory box-content box-content box-content box-content"></div>
+				<div class="barrel box-content box-content box-content"></div>
+				<div class="underbarrel box-content box-content"></div>
+				<div class="ammo box-content"></div>
+			</div>
+		</div>
+		<div class="loadout-item-container left-margin-container handgun">
+			<div class="loadout-container-header">
+				<h1><span>handgun</span></h1>				
+			</div>
+			<div class="gun-container box-content"><div class="gun handgunW"></div></div>
+			<div class="attachments">
+				<div class="optic box-content"></div>
+				<div class="accesory box-content box-content box-content box-content"></div>
+				<div class="barrel box-content box-content box-content"></div>
+				<div class="underbarrel box-content box-content"></div>
+				<div class="ammo box-content"></div>
+			</div>
+		</div>
+		<div class="loadout-item-container left-margin-container item">
+			<div class="loadout-container-header">
+				<h1><span>items</span></h1>
+			</div>
+			<div class="gadget1 box-content"></div>
+			<div class="gadget2 box-content"></div>
+			<div class="grenade box-content"></div>
+			<div class="knife box-content"></div>
+			<div class="field box-content"></div>
+		</div>
+</div>
+<table class="loadout-tablet">
+		<tbody>
+			<tr>
+				<td>
+					<div class="loadout-kit loadout-tablet-item-container">
+						<div class="loadout-container-header">
+							<h1><span><i></i>kit</span></h1>
+						</div>
+						<div class="kit-picture"><a class="box-content"href=""></a></div>
+						<div class="gen box-content"></div>
+					</div>
+				</td>
+				<td>
+					<div class="loadout-tablet-item-container primary-gun">
+						<div class="loadout-container-header">
+							<h1><span>primary</span></h1>
+						</div>						
+						<div class="gun-container box-content"><div class="gun primaryW"></div></div>
+						<div class="attachments">
+							<div class="optic box-content"></div>
+							<div class="accesory box-content box-content box-content box-content"></div>
+							<div class="barrel box-content box-content box-content"></div>
+							<div class="underbarrel box-content box-content"></div>
+							<div class="ammo box-content"></div>
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="loadout-tablet-item-container handgun">
+						<div class="loadout-container-header">
+							<h1><span>handgun</span></h1>
+						</div>
+						
+						<div class="gun-container box-content"><div class="gun handgunW"></div></div>
+						<div class="attachments">
+							<div class="optic box-content"></div>
+							<div class="accesory box-content box-content box-content box-content"></div>
+							<div class="barrel box-content box-content box-content"></div>
+							<div class="underbarrel box-content box-content"></div>
+							<div class="ammo box-content"></div>
+						</div>
+					</div>
+				</td>
+				<td>
+					<div class="loadout-tablet-item-container item">
+						<div class="loadout-container-header">
+							<h1><span>items</span></h1>
+						</div>
+						<div class="gadget1 box-content"></div>
+						<div class="gadget2 box-content"></div>
+						<div class="grenade box-content"></div>
+						<div class="knife box-content"></div>
+						<div class="field box-content"></div>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>	
+</div>
+
+
+<div id="error"class="container">
+	<p class="demo">Error you must input your soldier name and select your soldier's platform</p>
+</div>
+<div id="about">
+	<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+	<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+</div>
+<footer>
+	
+</footer>
+	
+	
+	
+
+	<!--<p>Random loadout generator</p>
+	<button id="generate" onclick="randomGenerate()">Generate</button>
+	<p id="demo"></p>-->
+
+	
+	
+	<script type="text/javascript" src="js/vendor/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="js/script3.js"></script>
+	<script type="text/javascript" src="js/script4.js"></script>
+	
+</body>
+</html>
