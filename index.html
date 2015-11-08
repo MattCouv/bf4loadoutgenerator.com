@@ -15,13 +15,13 @@
 	<div class="game"><img src="./bf4/logosmall.png" alt=""></div>
 	<div class="nav">
 	<div class="home">
-		<a href="#home"class="active-borders-right" id="ho">Soldier</a>
+		<a href="#home"class="active-borders-right" id="soldierBtn">Soldier</a>
 	</div>
 	<table class="left">
 		<tbody>
 			<tr>
 				<td>
-				<a href="#about"class="active-borders-left" id="ab">About</a>
+				<a href="#about"class="active-borders-left" id="aboutBtn">About</a>
 				</td>
 				<td>
 				<a href=""class="active-borders-left">donation</a>
@@ -31,6 +31,7 @@
 	</table>
 	</div>
 </header>
+<div id="loadlog">
 <div class="container" id="login">
 	<div class="main">
 		Soldier Name:<input type="text" id="soldiername" class="box-content active-borders">
@@ -44,18 +45,18 @@
 		<button id="sub">submit</button>
 	</div>
 </div>
-<div id="loadout"class="loadout-container-wpr container">
+<div id="loadout"class="loadout-container-wpr">
 <div class="row">
 		<div class="loadout-kit">
 			<div class="loadout-container-header">
-				<h1><span><i></i>kit</span></h1>				
+				<h1><span><i></i>kit</span><span class="kitname"></span></h1>				
 			</div>
 			<div class="kit-picture box-content gen"><div class="picture"></div></div>
-			<div class="gen box-content"><div class="gen-border"></div></div>
+			<div class="gen box-content"><div class="gen-border"><h1><span>generate</span></h1></div></div>
 		</div>
 		<div class="loadout-item-container left-margin-container primary-gun">
 			<div class="loadout-container-header">
-				<h1><span>primary</span></h1>				
+				<h1><span>primary</span><span class="Pname"></span></h1>
 			</div>
 			<div class="gun-container box-content"><div class="gun primaryW"></div></div>
 			<div class="attachments">
@@ -68,7 +69,7 @@
 		</div>
 		<div class="loadout-item-container left-margin-container handgun">
 			<div class="loadout-container-header">
-				<h1><span>handgun</span></h1>				
+				<h1><span>handgun</span><span class="Hname"></span></h1>				
 			</div>
 			<div class="gun-container box-content"><div class="gun handgunW"></div></div>
 			<div class="attachments">
@@ -83,11 +84,11 @@
 			<div class="loadout-container-header">
 				<h1><span>items</span></h1>
 			</div>
-			<div class="gadget1 box-content"></div>
-			<div class="gadget2 box-content"></div>
-			<div class="grenade box-content"></div>
-			<div class="knife box-content"></div>
-			<div class="field box-content"></div>
+			<div class="box-content"><div class="items gadget1"></div></div>
+			<div class="box-content"><div class="items gadget2"></div></div>
+			<div class="grenade box-content"><div class="items grenade"></div></div>
+			<div class="knife box-content"><div class="items knife"></div></div>
+			<div class="field box-content"><div class="items field"></div></div>
 		</div>
 </div>
 <table class="loadout-tablet">
@@ -96,16 +97,16 @@
 				<td>
 					<div class="loadout-kit loadout-tablet-item-container">
 						<div class="loadout-container-header">
-							<h1><span><i></i>kit</span></h1>
+							<h1><span><i></i>kit</span><span class="kitname"></span></h1>
 						</div>
-						<div class="kit-picture"><a class="box-content"href=""></a></div>
-						<div class="gen box-content"></div>
+						<div class="kit-picture box-content gen"><div class="picture"></div></div>
+			<div class="gen box-content"><div class="gen-border"><h1><span>generate</span></h1></div></div>
 					</div>
 				</td>
 				<td>
 					<div class="loadout-tablet-item-container primary-gun">
 						<div class="loadout-container-header">
-							<h1><span>primary</span></h1>
+							<h1><span>primary</span><span class="Pname"></span></h1>
 						</div>						
 						<div class="gun-container box-content"><div class="gun primaryW"></div></div>
 						<div class="attachments">
@@ -122,7 +123,7 @@
 				<td>
 					<div class="loadout-tablet-item-container handgun">
 						<div class="loadout-container-header">
-							<h1><span>handgun</span></h1>
+							<h1><span>handgun</span><span class="Hname"></span></h1>
 						</div>
 						
 						<div class="gun-container box-content"><div class="gun handgunW"></div></div>
@@ -151,14 +152,22 @@
 		</tbody>
 	</table>	
 </div>
-
+</div>
 
 <div id="error"class="container">
 	<p class="demo">Error you must input your soldier name and select your soldier's platform</p>
 </div>
-<div id="about">
-	<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-	<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+<div id="about"class="container">
+	<h1>Hurra!</h1>
+	<p>Welcome Soldier, to LoadoutGenerator. Here you will be able to generate some random loadouts for Battlefield 4 to mix things up and have some fun trying new things.</p>
+	<p>This little project is made possible thanks to the bf4stats API that provides you the hability to generate a random loadout with YOUR unlocks.</p>
+	<p>This started as a side project too refresh my Battlefield 4 play times. While searching for a random generator on internet i found nothing customized for me.</p>
+	<p>I then took the initiative to use my skills in web developement to create a fully customize loadout generator for BF4.</p>
+	<p>I realy went to take this project further including support for other games like Battlefront.</p>
+	<p>Now go have fun in the Battlefield</p>
+	</hr>
+	<p>Please feel free to contact me at matth.couvreur@gmail.com for any kind of feedback and request.</p>
+
 </div>
 <footer>
 	

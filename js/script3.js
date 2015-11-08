@@ -1,6 +1,6 @@
+$(document).ready(function(){
 function rnd(x){
-	var alea = Math.round(Math.random()*x);
-	return alea;
+	return alea = Math.round(Math.random()*x);	
 }
 var pd;
 $("#sub").click(function(){
@@ -9,7 +9,7 @@ $("#sub").click(function(){
 
 	var plat=$("#platform").val();
 	console.log(plat);
-	if(!soldier&&!plat){
+	if(!soldier||!plat){
 		$("#error").css('display','block');
 	}else{
 		$.getJSON("http://api.bf4stats.com/api/playerInfo?plat="+plat+"&name="+soldier+"&opt=assignments,imagePaths,names,upcomingUnlocks,weapons,details,kititems&output=json",function(json){
@@ -19,41 +19,53 @@ $("#sub").click(function(){
 		$("#error").css('display','none');
 		$("#login").css('display','none');
 		$("#loadout").css('display','block');
-	}
-	
+		generate();
+	}	
 });
 var kits = ["assault","engineer","support","recon"];
 var kit;
 var gadget=[];
-var cat;
-var cats=[];
-$(".gen").click(function(){
+function generate(){
 	kit=kits[rnd(3)];
 	console.log(kit);
-	if(kit==="assault"){
-		cats=["ASSAULT RIFLE","CARBINE","SHOTGUN","DMR"];
-	}else if(kit==="engineer"){
-		cats=["PDW","CARBINE","SHOTGUN","DMR"];
-	}else if(kit==="support"){
-		cats=["LMG","CARBINE","SHOTGUN","DMR"];
-	}else if(kit==="recon"){
-		cats=["SNIPER RIFLE","CARBINE","SHOTGUN","DMR"];
-	}
-	cat=cats[rnd(cats.length)];
-	console.log(cat);
-	var pre=rndPrimary (gunAssign,cat);
+	var pre=rndPrimary (gunAssign,rndCats(kit));
 	var hand=rndPrimary (handgunAssignments,"SIDEARM");
 	$('.picture').css('background','url(bf4/kits/'+kit+'.png) no-repeat');
+	$('.Pname').html(pre.name);
 	$('.primaryW').css('background','url('+pre.imgLineart+') no-repeat');
+	$('.Hname').html(hand.name);
 	$('.handgunW').css('background','url('+hand.imgLineart+') no-repeat');
+	$('.kitname').html(kit);
+}
+
+
+$(".gen").click(function(){
+	generate();
 });
+function rndCats(x){
+	var cat;
+	var cats=[];
+	if(x==="assault"){
+		cats=["ASSAULT RIFLE","CARBINE","SHOTGUN","DMR"];
+	}else if(x==="engineer"){
+		cats=["PDW","CARBINE","SHOTGUN","DMR"];
+	}else if(x==="support"){
+		cats=["LMG","CARBINE","SHOTGUN","DMR"];
+	}else if(x==="recon"){
+		cats=["SNIPER RIFLE","CARBINE","SHOTGUN","DMR"];
+	}
+	cat=cats[rnd(cats.length-1)];
+	return cat;
+}
 $(".primaryW").click(function(){
-	var pre=rndPrimary (gunAssign,cat);
+	var pre=rndPrimary (gunAssign,rndCats(kit));
 	$('.primaryW').css('background','url('+pre.imgLineart+') no-repeat');
+	$('.Pname').html(pre.name);
 });
 $(".handgunW").click(function(){
 	var hand=rndPrimary (handgunAssignments,"SIDEARM");
 	$('.handgunW').css('background','url('+hand.imgLineart+') no-repeat');
+	$('.Hname').html(hand.name);
 });
 
 //list chosen gun
@@ -166,7 +178,8 @@ var gunAssign=[
 ];
 var handgunAssignments=[
 {id:"UNICA 6",name:"Big Splash"},
-{id:"M412 REX",name:"Tombstone Actual (Campaign)"}
+{id:"M412 REX",name:"Tombstone Actual (Campaign)"},
+{id:"SW40",name:"Curve Ball"}
 ];
 var gadgetAssignments=[
 {id:"SUAV",name:"Safe Raiding"},
@@ -207,26 +220,31 @@ function rndPrimary (x,a) {//x=one of the tables above a=wich weapon category
 }
 
 function gunAssignments(x){
-	var assignment=[];
+	var assignment;
 	var checked=0;
 	for(var i=0;i<pd.assignments.length;i++){
 		if(pd.assignments[i].name===x){
-			assignment[0]=pd.assignments[i];
+			assignment=pd.assignments[i];
 		}
 	}
-	console.log(assignment[0]);
-	for(i=0;i<assignment[0].criterias.length;i++){
-		if(assignment[0].criterias[i].curr===assignment[0].criterias[i].needed){
+	console.log(assignment);
+	if(undefined === assignment){
+		gun=true;
+	}else{
+		for(i=0;i<assignment.criterias.length;i++){
+		if(assignment.criterias[i].curr===assignment.criterias[i].needed){
 			checked++;	
 		}else{checked=checked;}
-	}
-	console.log(checked);
-	console.log(assignment[0].criterias.length);
-	if(checked===assignment[0].criterias.length){
+		}
+		if(checked===assignment.criterias.length){
 		gun=true;
 	}else{
 		gun=false;
-	}
+	}console.log(assignment.criterias.length);
+	}	
+	console.log(checked);
+	
+	
 	return gun; 
 }
 function gunUnlock(x,y){//x=pre.name
@@ -243,3 +261,4 @@ function gunUnlock(x,y){//x=pre.name
 	}else{gun=true;}console.log(gun);
 	return gun;
 }
+});

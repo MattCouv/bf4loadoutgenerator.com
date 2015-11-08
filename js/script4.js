@@ -1,9 +1,9 @@
 
-$("#ho").click(function(){
+$("#soldierBtn").click(function(){
 	$("#about").css('display','none');
-	$("#loadout").css('display','block');
+	$("#loadlog").css('display','block');
 });
-$("#ab").click(function(){
-	$("#loadout").css('display','none');
+$("#aboutBtn").click(function(){
+	$("#loadlog").css('display','none');
 	$("#about").css('display','block');
 });

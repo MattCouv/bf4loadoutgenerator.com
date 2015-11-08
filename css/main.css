@@ -8,7 +8,8 @@ padding: 0;
 border: 0;
 }
 @import "purista.css";
-
+html {
+  font-size: 62.5%; }
 
 body {
   font-size: 1.5em; /* currently ems cause chrome bug misinterpreting rems on body element */
@@ -53,10 +54,15 @@ input{
 }
 #about{
 	display: none;
+	text-transform: none;
+}
+#about h1{
+	margin-bottom: 20px;
 }
 #loadout{display: none;}
 #error{
 	display: none;
+	color:#ff9900;
 }
 .left{
 	float: right;
@@ -70,12 +76,30 @@ input{
 .loadout{
 	width: 100%;/* 958/960*/	
 }
-.loadout-kit{
+.loadout-kit .picture{
 	display: none;
+	
+}
+.gen-border{
+	border: solid #ff9900 1px;
+	color:#ff9900;
+}
+.gen-border h1{
+	line-height: 72.4px;
+	font-size: 16px;
+	text-align: center;
+}
+.gen-border:hover{
+	border: solid #E4B744 1px;
+	color: #E4B744;
 }
 .loadout-container-header{
 background-color: rgba(7, 7, 7, 0.8);
     padding: 0 8px;
+}
+.Pname,.Hname,.kitname{
+	position: absolute;
+	right:0;
 }
 .loadout-container-header h1{
 	line-height: 23px;
@@ -83,6 +107,7 @@ background-color: rgba(7, 7, 7, 0.8);
     font-size: 16px;
     margin: 0;
     font-weight: 600;
+    position: relative;
 
 }
 .active-borders-left{
@@ -103,24 +128,30 @@ background-color: rgba(7, 7, 7, 0.8);
 .loadout-tablet{
 	display: none;
 }
+.container{
 
+	padding: 50px 20px;
+	background-color: rgba(7, 7, 7, 0.5);
+}
 /*larger than phones*/
 @media (min-width: 768px) {
 .row{
 	display: none;
 }
- .loadout-container-wpr,.container{	
+ .loadout-container-wpr,.container{
+ 	
   	margin: 100px auto; 
   	max-width: 768px;
  }
+ 
 
-.loadout-kit{
+.loadout-kit {
 	width: 383px;
 	height: 400px;
-	display: block;
+	
 }
-.kit-picture{
-
+.kit-picture .picture{
+	display: block;
 	height: 300.6px;
 }
 .loadout-tablet{
@@ -141,23 +172,17 @@ background-color: rgba(7, 7, 7, 0.8);
 .item .box-content{
 	height: 74.4px;
 }
-.gen-border{
-	height: 72.4px;
-	border: solid #ff9900 1px;
-	color:#ff9900;
+.item {
+
 }
-.gen-border:hover{
-	border: solid #E4B744 1px;
-	color: #E4B744;
-}
-.picture{
-	height: 100%;
-}
+
+
 .gun-container{
 	height: 112px;
 	padding-top: 20px;
 }
 .gun{
+	margin-left: 50px;
 	height: 92px;
 }
 #primary{
@@ -179,6 +204,7 @@ background-color: rgba(7, 7, 7, 0.8);
 	width: 260px;
 	height: 400px;
 	display: inline-block;
+	vertical-align: top;
 }
 .left-margin-container{
 	margin-left: 26px;
@@ -187,11 +213,17 @@ background-color: rgba(7, 7, 7, 0.8);
 	width: 260px;
 	height: 400px;
 	display: inline-block;
+	vertical-align: top;
 }
 .loadout-tablet{
 	display: none;
 }
-
-
+.gun{
+	margin-left: 0;
+	height: 92px;
+}
+.kit-picture .picture{
+	background-position:center center;
+} 
 
 }
