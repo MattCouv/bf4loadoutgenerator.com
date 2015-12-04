@@ -1,6 +1,6 @@
 $(document).ready(function(){
 function rnd(x){
-	return alea = Math.round(Math.random()*x);	
+	return alea = Math.round(Math.random()*x);
 }
 var pd;
 $("#sub").click(function(){
@@ -20,7 +20,7 @@ $("#sub").click(function(){
 		$("#login").css('display','none');
 		$("#loadout").css('display','block');
 		generate();
-	}	
+	}
 });
 var kits = ["assault","engineer","support","recon"];
 var kit;
@@ -30,12 +30,15 @@ function generate(){
 	console.log(kit);
 	var pre=rndPrimary (gunAssign,rndCats(kit));
 	var hand=rndPrimary (handgunAssignments,"SIDEARM");
+	var grenade=rndPrimary(gunAssign,"GRENADE");
 	$('.picture').css('background','url(bf4/kits/'+kit+'.png) no-repeat');
 	$('.Pname').html(pre.name);
 	$('.primaryW').css('background','url('+pre.imgLineart+') no-repeat');
 	$('.Hname').html(hand.name);
 	$('.handgunW').css('background','url('+hand.imgLineart+') no-repeat');
 	$('.kitname').html(kit);
+	$('.grenade').css('background','url('+grenade.imgLineart+') no-repeat');
+
 }
 
 
@@ -70,12 +73,9 @@ $(".handgunW").click(function(){
 
 //list chosen gun
 
-var sideharm=[];
-var grenade=[];
-
 function listGUns(a,x){//a=variables above and x="GRENADE","ASSAULT RIFLE","CARBINE","LMG","PDW","DMR","SNIPER RIFLE","SIDEARM","SHOTGUN"
 	var y=0;
-	
+
 	for(var i=0;i<pd.weapons.length;i++){
 		if(pd.weapons[i].detail.category===x){
 			a[y]=pd.weapons[i];
@@ -101,7 +101,7 @@ function listGadgets(a, b, c){//a=array of the specific class,b=the class, c=jus
 			y++;
 	}else{
 			y=y;
-	}			
+	}
 	}
 	for(i=0;i<pd.weapons.length;i++){
 	if(pd.weapons[i].detail.category==="GADGET"&&pd.weapons[i].detail.kits[0]===b){
@@ -109,13 +109,12 @@ function listGadgets(a, b, c){//a=array of the specific class,b=the class, c=jus
 			y++;
 	}else{
 			y=y;
-	}			
 	}
-	
+	}
 	$.each(item, function(i, el){
     if($.inArray(el, a) === -1) a.push(el);
 	});
-	
+
 	console.log(a.length);
 	return a;
 }
@@ -134,7 +133,7 @@ function unlockItem(x){//have to receive the category of the item for instance w
 			y=y;
 		}
 	}
-	return item; 
+	return item;
 }
 
 //this function creates an array with guns not yet unlocked to compare with the selected category to then substracte them
@@ -195,26 +194,25 @@ var knifeAssignments=[
 
 function rndPrimary (x,a) {//x=one of the tables above a=wich weapon category
 	var Gun=[];
-	listGUns(Gun,a);	
+	listGUns(Gun,a);
 	var pre;
-	var gun=true;	
+	var gun=true;
 	do{
 		var tocheck=[];
-		pre=Gun[rnd(Gun.length-1)];		
+		pre=Gun[rnd(Gun.length-1)];
 		for(var i=0;i<x.length;i++){
 			if(x[i].id===pre.name){
-				tocheck[0]=x[i];				
+				tocheck[0]=x[i];
 			}
 		}
 		if(!tocheck[0]){
 			console.log(pre.name);
-			
 			gun=gunUnlock(pre.name,unlockGun(a,unlockItem("weapon")));
 			console.log(gunUnlock(pre.name,unlockGun(a,unlockItem("weapon"))));
 		}else{
 			gun=gunAssignments(tocheck[0].name);
 		}
-	}		
+	}
 	while(gun===false);
 	return pre;
 }
@@ -233,7 +231,7 @@ function gunAssignments(x){
 	}else{
 		for(i=0;i<assignment.criterias.length;i++){
 		if(assignment.criterias[i].curr===assignment.criterias[i].needed){
-			checked++;	
+			checked++;
 		}else{checked=checked;}
 		}
 		if(checked===assignment.criterias.length){
@@ -241,21 +239,19 @@ function gunAssignments(x){
 	}else{
 		gun=false;
 	}console.log(assignment.criterias.length);
-	}	
+	}
 	console.log(checked);
-	
-	
-	return gun; 
+	return gun;
 }
 function gunUnlock(x,y){//x=pre.name
 	var not=false;
-	
+
 	for(var i=0;i<y.length;i++){
-		
+
 		if(y[i].name===x){
 			not=true;
 		}
-	}	
+	}
 	if(not===true){
 		gun=false;
 	}else{gun=true;}console.log(gun);

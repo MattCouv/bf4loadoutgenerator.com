@@ -41,12 +41,16 @@ input{
 	color: #d5dde5;
 	width: 140px;
 	text-align: center;
-	
 	font-size: 16px;
 }
 .nav a:hover{
 	background: #000;
 	color: #fff;
+}
+#head{
+	position: fixed;
+	top: 0;
+	width: 100%;
 }
 #head .game{
 	height: 48px;
@@ -74,11 +78,11 @@ input{
 	display: block;
 }
 .loadout{
-	width: 100%;/* 958/960*/	
+	width: 100%;/* 958/960*/
 }
 .loadout-kit .picture{
 	display: none;
-	
+
 }
 .gen-border{
 	border: solid #ff9900 1px;
@@ -111,7 +115,7 @@ background-color: rgba(7, 7, 7, 0.8);
 
 }
 .active-borders-left{
-	border-left: solid #353a3f 1px;/*1/960*/	
+	border-left: solid #353a3f 1px;/*1/960*/
 }
 .active-borders-right{
 	border-right: solid #353a3f 1px;
@@ -130,7 +134,7 @@ background-color: rgba(7, 7, 7, 0.8);
 }
 .container{
 
-	padding: 50px 20px;
+	padding: 105px 20px;
 	background-color: rgba(7, 7, 7, 0.5);
 }
 /*larger than phones*/
@@ -139,16 +143,16 @@ background-color: rgba(7, 7, 7, 0.8);
 	display: none;
 }
  .loadout-container-wpr,.container{
- 	
-  	margin: 100px auto; 
+
+  	margin: 50px auto;
   	max-width: 768px;
  }
- 
+
 
 .loadout-kit {
 	width: 383px;
 	height: 400px;
-	
+
 }
 .kit-picture .picture{
 	display: block;
@@ -169,11 +173,13 @@ background-color: rgba(7, 7, 7, 0.8);
 .attachments div{
 	height: 52px;
 }
-.item .box-content{
+.items{
 	height: 74.4px;
+	padding-top:10px;
+	position: relative;
 }
-.item {
-
+.itempic{
+	height:60px;
 }
 
 
@@ -195,8 +201,8 @@ background-color: rgba(7, 7, 7, 0.8);
 .row{
 	display: block;
 }
-.loadout-container-wpr{	
-  	margin: 100px auto; 
+.loadout-container-wpr{
+  	margin: 100px auto;
   	max-width: 1140px;
   	mari
 }
@@ -224,6 +230,6 @@ background-color: rgba(7, 7, 7, 0.8);
 }
 .kit-picture .picture{
 	background-position:center center;
-} 
+}
 
 }
