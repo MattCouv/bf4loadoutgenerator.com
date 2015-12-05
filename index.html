@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>BF4 Random Generator</title>	
+	<title>BF4 Random Generator</title>
 	<link rel="stylesheet" type="text/css" href="css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="stylesheet" type="text/css" href="css/purista.css">
@@ -14,21 +14,23 @@
 <header id="head">
 	<div class="game"><img src="./bf4/logosmall.png" alt=""></div>
 	<div class="nav">
+	<div class="menu">
 	<div class="home">
-		<a href="#home"class="active-borders-right" id="soldierBtn">Soldier</a>
+		<a href="#home" class="active-borders-right" id="soldierBtn">Soldier</a>
 	</div>
 	<table class="left">
 		<tbody>
 			<tr>
 				<td>
-				<a href="#about"class="active-borders-left" id="aboutBtn">About</a>
+				<a href="#about" class="active-borders-left" id="aboutBtn">About</a>
 				</td>
 				<td>
-				<a href=""class="active-borders-left">donation</a>
+				<a href="" class="active-borders-left">donation</a>
 				</td>
 			</tr>
 		</tbody>
 	</table>
+	</div>
 	</div>
 </header>
 <div id="loadlog">
@@ -45,7 +47,7 @@
 		<button id="sub">submit</button>
 	</div>
 </div>
-<div id="loadout"class="loadout-container-wpr">
+<div id="loadout" class="loadout-container-wpr">
 <div class="row">
 		<div class="loadout-kit">
 			<div class="loadout-container-header">
@@ -140,23 +142,23 @@
 						<div class="loadout-container-header">
 							<h1><span>items</span></h1>
 						</div>
-						<div class="gadget1 box-content"></div>
-						<div class="gadget2 box-content"></div>
-						<div class="grenade box-content"></div>
-						<div class="knife box-content"></div>
-						<div class="field box-content"></div>
+						<div class="box-content items"><div class="itempic gadget1"></div></div>
+						<div class="items box-content"><div class="itempic gadget2"></div></div>
+						<div class="items box-content"><div class="itempic grenade"></div></div>
+						<div class="items box-content"><div class="itempic knife"></div></div>
+						<div class="items box-content"><div class="itempic field"></div></div>
 					</div>
 				</td>
 			</tr>
 		</tbody>
-	</table>	
+	</table>
 </div>
 </div>
 
-<div id="error"class="container">
+<div id="error" class="container">
 	<p class="demo">Error you must input your soldier name and select your soldier's platform</p>
 </div>
-<div id="about"class="container">
+<div id="about" class="container">
 	<h1>Hurra!</h1>
 	<p>Soldier welcome to LoadoutGenerator. Here you will be able to generate some random loadouts for Battlefield 4 to mix things up and have some fun trying new ways to play.</p>
 	<p>This little project is made possible thanks to the bf4stats API that provides you the hability to generate a random loadout with YOUR unlocks.</p>
@@ -164,7 +166,7 @@
 	<p>I then took the initiative to use my skills in web developement to create a fully customized loadout generator for BF4.</p>
 	<p>I really want to take this project further by including support for other games like Battlefront.</p>
 	<p>Now go have fun in the Battlefield !</p>
-	</hr>
+	<hr>
 	<p>Please feel free to contact me at matth.couvreur@gmail.com for any kind of feedback and request.</p>
 
 </div>

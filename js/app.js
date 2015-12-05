@@ -28,9 +28,10 @@ var gadget=[];
 function generate(){
 	kit=kits[rnd(3)];
 	console.log(kit);
-	var pre=rndPrimary (gunAssign,rndCats(kit));
-	var hand=rndPrimary (handgunAssignments,"SIDEARM");
-	var grenade=rndPrimary(gunAssign,"GRENADE");
+	var pre=rndPrimary (gunAssign,rndCats(kit)),
+		hand=rndPrimary (handgunAssignments,"SIDEARM"),
+		grenade=rndPrimary(gunAssign,"GRENADE"),
+		knife=rndPrimary(knifeAssignments,"KNIFE");
 	$('.picture').css('background','url(bf4/kits/'+kit+'.png) no-repeat');
 	$('.Pname').html(pre.name);
 	$('.primaryW').css('background','url('+pre.imgLineart+') no-repeat');
@@ -38,6 +39,7 @@ function generate(){
 	$('.handgunW').css('background','url('+hand.imgLineart+') no-repeat');
 	$('.kitname').html(kit);
 	$('.grenade').css('background','url('+grenade.imgLineart+') no-repeat');
+	$('.knife').css('background','url('+knife.imgLineart+') no-repeat');
 
 }
 
@@ -69,6 +71,14 @@ $(".handgunW").click(function(){
 	var hand=rndPrimary (handgunAssignments,"SIDEARM");
 	$('.handgunW').css('background','url('+hand.imgLineart+') no-repeat');
 	$('.Hname').html(hand.name);
+});
+$(".grenade").click(function(){
+	var grenade=rndPrimary (gunAssign,"GRENADE");
+	$('.grenade').css('background','url('+grenade.imgLineart+') no-repeat');
+});
+$(".knife").click(function(){
+	var knife=rndPrimary (knifeAssignments,"KNIFE");
+	$('.knife').css('background','url('+knife.imgLineart+') no-repeat');
 });
 
 //list chosen gun
