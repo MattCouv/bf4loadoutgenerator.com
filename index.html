@@ -1,3 +1,4 @@
+<!-- All rights reserved to Matthieu Couvreur email : matth.couvreur@gmail.com -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,14 +6,14 @@
 	<title>BF4 Random Generator</title>
 	<link rel="stylesheet" type="text/css" href="css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<link rel="stylesheet" type="text/css" href="css/purista.css">
+	<!-- <link rel="stylesheet" type="text/css" href="css/purista.css"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
 
 
 <body>
 <header id="head">
-	<div class="game"><img src="./bf4/logosmall.png" alt=""></div>
+	<div class="game"><a href=""><img src="./bf4/logosmall.png" alt=""></div></a>
 	<div class="nav">
 	<div class="menu">
 	<div class="home">
@@ -25,7 +26,7 @@
 				<a href="#about" class="active-borders-left" id="aboutBtn">About</a>
 				</td>
 				<td>
-				<a href="" class="active-borders-left">donation</a>
+				<a href="#donation" class="active-borders-left" id="donateBtn">Support</a>
 				</td>
 			</tr>
 		</tbody>
@@ -35,19 +36,22 @@
 </header>
 <div id="loadlog">
 <div class="container" id="login">
+	<div id="help"><p>Get strated it's easy ! </br>Enter your BF4 soldier name and select the platform you play on and submit ! </p></div>
 	<div class="main">
-		Soldier Name:<input type="text" id="soldiername" class="box-content active-borders">
-		Your Platform:<select name="browser" class="box-content active-borders" id="platform">
+		Soldier Name :<span> (Case sensitive)</span><input type="text" id="soldiername" class="box-content active-borders">
+		Your Platform :
+		<select name="browser" class="box-content active-borders" id="platform">
 	  	    <option value="pc">pc</option>
 		    <option value="xbox">xbox</option>
 		    <option value="ps3">ps3</option>
 		    <option value="xone">xone</option>
 		    <option value="ps4">ps4</option>
 		 </select>
-		<button id="sub">submit</button>
+		<button id="sub" class="gen-border box-content">Submit</button>
 	</div>
 </div>
 <div id="loadout" class="loadout-container-wpr">
+
 <div class="row">
 		<div class="loadout-kit">
 			<div class="loadout-container-header">
@@ -88,8 +92,8 @@
 			</div>
 			<div class="box-content items"><div class="itempic gadget1"></div></div>
 			<div class="items box-content"><div class="itempic gadget2"></div></div>
-			<div class="items box-content"><div class="itempic grenade"></div></div>
-			<div class="items box-content"><div class="itempic knife"></div></div>
+			<div class="items box-content"><div class="itempic grenade"><span class="Gname"></span></div></div>
+			<div class="items box-content"><div class="itempic knife"><span class="Kname"></span></div></div>
 			<div class="items box-content"><div class="itempic field"></div></div>
 		</div>
 </div>
@@ -144,8 +148,8 @@
 						</div>
 						<div class="box-content items"><div class="itempic gadget1"></div></div>
 						<div class="items box-content"><div class="itempic gadget2"></div></div>
-						<div class="items box-content"><div class="itempic grenade"></div></div>
-						<div class="items box-content"><div class="itempic knife"></div></div>
+						<div class="items box-content"><div class="itempic grenade"><span class="Gname"></span></div></div>
+						<div class="items box-content"><div class="itempic knife"><span class="Kname"></span></div></div>
 						<div class="items box-content"><div class="itempic field"></div></div>
 					</div>
 				</td>
@@ -170,13 +174,22 @@
 	<p>Please feel free to contact me at matth.couvreur@gmail.com for any kind of feedback and request.</p>
 
 </div>
-<footer>
-	
-</footer>
+<div id="donation" class="container">
+	<h1>Support me !</h1>
+	<p>If you like this project and want it to grow, please feel free to support me by donating throw PayPal.</p>
+	<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+	<input type="hidden" name="cmd" value="_s-xclick">
+	<input type="hidden" name="hosted_button_id" value="2U65X5Q8ZXLES">
+	<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+	<img alt="" border="0" src="https://www.paypalobjects.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
+	</form>
+	<p>The money collected will help me pay for the site and continue the development of this project.</p>
+
+
+</div>
 
 	<script type="text/javascript" src="js/vendor/jquery-1.11.3.min.js"></script>
 	<script type="text/javascript" src="js/app.js"></script>
 	<script type="text/javascript" src="js/router.js"></script>
-	
 </body>
 </html>

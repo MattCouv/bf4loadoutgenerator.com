@@ -14,12 +14,13 @@ $("#sub").click(function(){
 	}else{
 		$.getJSON("http://api.bf4stats.com/api/playerInfo?plat="+plat+"&name="+soldier+"&opt=assignments,imagePaths,names,upcomingUnlocks,weapons,details,kititems&output=json",function(json){
 		pd=json;
-		console.log(pd);
+		console.log('pd'+pd);
 		});
-		$("#error").css('display','none');
-		$("#login").css('display','none');
-		$("#loadout").css('display','block');
-		generate();
+
+			$("#error").css('display','none');
+			$("#login").css('display','none');
+			$("#loadout").css('display','block');
+			generate();
 	}
 });
 var kits = ["assault","engineer","support","recon"];
@@ -38,8 +39,10 @@ function generate(){
 	$('.Hname').html(hand.name);
 	$('.handgunW').css('background','url('+hand.imgLineart+') no-repeat');
 	$('.kitname').html(kit);
-	$('.grenade').css('background','url('+grenade.imgLineart+') no-repeat');
-	$('.knife').css('background','url('+knife.imgLineart+') no-repeat');
+	$('.grenade').css({'background':'url('+grenade.imgLineart+') no-repeat','background-size':'70%'});
+	$('.Gname').html(grenade.name);
+	$('.knife').css({'background':'url('+knife.imgLineart+') no-repeat','background-size':'52%'});
+	$('.Kname').html(knife.name);
 
 }
 
@@ -74,11 +77,13 @@ $(".handgunW").click(function(){
 });
 $(".grenade").click(function(){
 	var grenade=rndPrimary (gunAssign,"GRENADE");
-	$('.grenade').css('background','url('+grenade.imgLineart+') no-repeat');
+	$('.grenade').css({'background':'url('+grenade.imgLineart+') no-repeat','background-size':'70%'});
+	$('.Gname').html(grenade.name);
 });
 $(".knife").click(function(){
 	var knife=rndPrimary (knifeAssignments,"KNIFE");
-	$('.knife').css('background','url('+knife.imgLineart+') no-repeat');
+	$('.knife').css({'background':'url('+knife.imgLineart+') no-repeat','background-size':'52%'});
+	$('.Kname').html(knife.name);
 });
 
 //list chosen gun

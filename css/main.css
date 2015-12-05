@@ -33,6 +33,23 @@ input{
 	width: 100%;
 	background: #181B20;
 }
+#sub{
+	text-align: center;
+	line-height: 40px;
+	padding: 0 20px;
+	margin-top: 10px;
+	text-transform: uppercase;
+}
+#help{
+	margin-bottom: 20px;
+}
+#platform,#soldiername{
+	width: 200px;
+	height: 35px;
+}
+#selection #back{
+
+}
 .nav .menu{
 	width: 318px;
 	margin: 0 auto;
@@ -62,6 +79,14 @@ input{
 #about{
 	display: none;
 	text-transform: none;
+}
+#donation{
+	display: none;
+	text-transform: none;
+}
+#donation form{
+	margin: 20px auto;
+
 }
 #about h1{
 	margin-bottom: 20px;
@@ -198,11 +223,17 @@ background-color: rgba(7, 7, 7, 0.8);
 }
 .items{
 	height: 74.4px;
-	padding-top:10px;
+	padding:20px 10px 0 10px;
 	position: relative;
 }
 .itempic{
-	height:60px;
+	position: relative;
+	height:50px;
+}
+.itempic span{
+	position: absolute;
+	margin-top: 5px;
+	right: 0;
 }
 
 

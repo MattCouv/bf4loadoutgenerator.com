@@ -7,3 +7,4 @@ RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^ bf4loadoutgenerator.com/index.html [L]
+ErrorDocument 404 /new404.html
