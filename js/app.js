@@ -33,16 +33,16 @@ function generate(){
 		hand=rndPrimary (handgunAssignments,"SIDEARM"),
 		grenade=rndPrimary(gunAssign,"GRENADE"),
 		knife=rndPrimary(knifeAssignments,"KNIFE");
-	$('.picture').css('background','url(bf4/kits/'+kit+'.png) no-repeat');
+	$('.picture').css({'background':'url(bf4/kits/'+kit+'.png) no-repeat','background-size':'100%'});
 	$('.Pname').html(pre.name);
-	$('.primaryW').css('background','url('+pre.imgLineart+') no-repeat');
+	$('.primaryW').css({'background':'url('+pre.imgLineart+') no-repeat','background-size':'auto 54.4px'});
 	$('.Hname').html(hand.name);
-	$('.handgunW').css('background','url('+hand.imgLineart+') no-repeat');
+	$('.handgunW').css({'background':'url('+hand.imgLineart+') no-repeat','background-size':'auto 54.4px'});
 	$('.kitname').html(kit);
-	$('.grenade').css({'background':'url('+grenade.imgLineart+') no-repeat','background-size':'70%'});
-	$('.Gname').html(grenade.name);
-	$('.knife').css({'background':'url('+knife.imgLineart+') no-repeat','background-size':'52%'});
-	$('.Kname').html(knife.name);
+	$('.items .item:nth-child(4) .itempic').css({'background':'url('+grenade.imgLineart+') no-repeat','background-size':'100%'});
+	$('.items .item:nth-child(4) .name').html(grenade.name);
+	$('.items .item:nth-child(5) .itempic').css({'background':'url('+knife.imgLineart+') no-repeat','background-size':'100%'});
+	$('.items .item:nth-child(5) .name').html(knife.name);
 
 }
 
@@ -67,23 +67,23 @@ function rndCats(x){
 }
 $(".primaryW").click(function(){
 	var pre=rndPrimary (gunAssign,rndCats(kit));
-	$('.primaryW').css('background','url('+pre.imgLineart+') no-repeat');
+	$('.primaryW').css({'background':'url('+pre.imgLineart+') no-repeat','background-size':'auto 54.4px'});
 	$('.Pname').html(pre.name);
 });
 $(".handgunW").click(function(){
 	var hand=rndPrimary (handgunAssignments,"SIDEARM");
-	$('.handgunW').css('background','url('+hand.imgLineart+') no-repeat');
+	$('.handgunW').css({'background':'url('+hand.imgLineart+') no-repeat','background-size':'auto 54.4px'});
 	$('.Hname').html(hand.name);
 });
-$(".grenade").click(function(){
+$(".item").click(function(){
 	var grenade=rndPrimary (gunAssign,"GRENADE");
-	$('.grenade').css({'background':'url('+grenade.imgLineart+') no-repeat','background-size':'70%'});
-	$('.Gname').html(grenade.name);
+	$(this).find('.itempic').css({'background':'url('+grenade.imgLineart+') no-repeat','background-size':'100%'});
+	$(this).find('.name').html(grenade.name);
 });
-$(".knife").click(function(){
+$(".item").click(function(){
 	var knife=rndPrimary (knifeAssignments,"KNIFE");
-	$('.knife').css({'background':'url('+knife.imgLineart+') no-repeat','background-size':'52%'});
-	$('.Kname').html(knife.name);
+	$(this).find('.itempic').css({'background':'url('+knife.imgLineart+') no-repeat','background-size':'100%'});
+	$(this).find('.name').html(knife.name);
 });
 
 //list chosen gun
